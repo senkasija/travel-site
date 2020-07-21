@@ -1,0 +1,19 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  * {
+    /*Asteriks označava da treba da selektuje baš svaki element na stranici */
+    box-sizing: border-box;
+    /*Ovaj atribut sa vrednošću gornjom kaže da se u slučaju padinga element mora smanjiti, a ne da se raširi prostor oko sebe */
+  }
+
+  a {
+    color: $mainOrange;
+  }

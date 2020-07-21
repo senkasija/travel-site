@@ -1,0 +1,61 @@
+.large-hero {
+  border-bottom: 10px solid $mainBlue;
+  position: relative;
+
+  &__image {
+    display: block;
+    /* između fotografije i border-bottom se pojavljuje bela praznina ako bi element bio inlajn, ali ako se display postavi na block, onda praznina nestaje i elementi su fino spojeni 
+    * Naime, po difoltu web browser tretira slike kao inline level elemmente, tj. on misli da je slika slična redu teksta i da je tom redu teksta potrebna donja belina za donji deo slova, kao što je slučaj o slovima: g, y, q...; ali sa  vrednošću blok on sliku tretira kao div koji savršeno naleže na okolni  div
+    */
+  }
+/*Da bi sadržaj bio pozicioniran po sredini vertikalno, a ne njegov vrh,  onda primenjujemo atribut transform sa vrednošću translateY - 50 koji ga vraća za pola naviše*/
+  &__text-content {
+    padding-top: 60px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__title {
+    font-weight: 300;
+    color: $mainBlue;
+    margin: 0;
+    font-size: 2.4rem;
+  
+    @mixin atSmall {
+      font-size: 4.8rem;
+    }
+
+  }
+
+  &__subtitle {
+    font-weight: 300;
+    color: $mainBlue;
+    font-size: 1.5rem;
+    margin: 0;
+
+    @mixin atSmall {
+      font-size: 2.9rem;
+    }
+
+  }
+
+  &__description {
+    color: #FFF;
+    font-size: 1.1rem;
+    font-weight: 100;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, .1);
+    max-width: 30rem;
+    /*da bi se tekst prelomio koristimo opciju max-width, ali tada moramo i margine podesiti kao dole da bi stajao na sredini*/
+    margin-left: auto;
+    margin-right: auto;
+
+    @mixin atSmall {
+      font-size: 1.875rem;
+    }
+  }
+
+}

@@ -1,0 +1,46 @@
+.wrapper {
+  overflow: hidden;
+  /*Ovim atrubutom i vrednošću poništavamo višak koji izlazi iz wprapera u slučaju kad koristimo gutter */
+  padding-left: 18px;
+  padding-right: 18px;
+  max-width: 1236px;
+  /*Da bi se održala širina na 1200 zgob boreder-boxa povećavamo za zbir levog i desnog padinga */
+  margin-left: auto;
+  margin-right: auto;
+
+  &--medium {
+    max-width: 976px;
+  }
+  &--no-padding-until-medium {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atMedium {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+  &--no-padding-until-large {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atLarge {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+  .wrapper {
+    /*PAŽNJA: ovo čitamo kao: bilo koji vraper koji je ugnežđen u roditeljski vraper treba da ima levi i desni pading 0*/
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &--b-margin {
+    margin-bottom: 1rem;
+
+    @mixin atSmall {
+      margin-bottom: 3.875rem;
+    }
+  }
+
+}

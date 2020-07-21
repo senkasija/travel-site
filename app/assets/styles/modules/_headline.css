@@ -1,0 +1,52 @@
+.headline {
+  font-size: 1.9rem;
+  font-weight: 300;
+  color: $mainBlue;
+
+  @mixin atSmall {
+    font-size: 2.875rem;
+  }
+
+  &--centered {
+    text-align: center;
+  }
+
+  &--orange {
+    color: $mainOrange;
+  }
+
+  &--small {
+    font-size: 1.2rem;
+    @mixin atSmall {
+      font-size: 1.875rem;
+    }
+  }
+
+  &--narrow {
+    /*Dakle, kad hoćemo dva reda, ne prelamamo ručno već suzimo pomoću max-width i moramo centrirati pomoću atrubuta margin */
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &--light {
+    font-weight: 100;
+  }
+
+  strong {
+    font-weight: 400;
+  }
+
+  &--b-margin-small {
+    margin-bottom: .5em;
+    /*Margine voli da označava pomoću em */
+  }
+
+  &--b-margin-large {
+    margin-bottom: 1.6em;
+  }
+
+  &--no-t-margin {
+    margin-top: 0;
+  }
+}

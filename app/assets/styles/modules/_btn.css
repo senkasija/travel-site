@@ -1,0 +1,21 @@
+.btn {
+  background-color: $mainBlue;
+  color: #FFF;
+  text-decoration: none;
+  padding: .75rem 1.2rem;
+  display: inline-block;
+/*inline-block je vrednost koju stavljamo ukoliko koristimo vertikalni padding kako bi toga bili svesni roditeljski i okružujući divovi
+**dakle blok je btn, a onda dodajemo novi stil btn--orange koji je modifier*/
+  &--orange {
+    background-color: $mainOrange;
+  }
+
+  &--large {
+    padding: 1.1rem 1.9rem;
+
+    @mixin atSmall {
+      font-size: 1.25rem;
+    }
+  }
+
+}

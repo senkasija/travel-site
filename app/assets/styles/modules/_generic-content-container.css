@@ -1,0 +1,20 @@
+.generic-content-container {
+  /*Kada imamo više paragrafa koji se ponavljaju unutar diva treba ih obuhvatiti jednim stilom, a ne praviti za svaki paragraf novi stil*/
+  p {
+    font-weight: 300;
+    line-height: 1.65;
+    margin: 0 0 1.8rem 0;
+
+    @mixin atSmall {
+      font-size: 1.125rem;
+    }
+  }
+
+  p a {
+    /*
+    ovo je moglo da ide i unutar selektora p, ali je bolje da se ne ide po dubini više od jednog nivoa, a ovo je prvi nivo jer je generic-... roditeljski
+    */
+    font-weight: 700;
+  }
+
+}
