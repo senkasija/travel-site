@@ -24,8 +24,15 @@
   }
   &--testimonials {
     background-color: #e0e6ef;
+    
     @mixin atLarge {
       background: url("/assets/images/testimonials-bg.jpg") top center no-repeat;
+      /*
+      I recommend you remove the forward slash from the start of the image path.
+      instead of this: background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+      Use this: background: url('assets/images/testimonials-bg.jpg') top center no-repeat;
+      This way your code works in a wider variety of hosting situations once you're ready to push the site live to the public.
+      */
       background-size: cover;
     }
 

@@ -15,6 +15,10 @@
     &__photo {
       border-radius: 80px;
       overflow: hidden;
+      /*Fotografija uopšte ne bi bila okrugla ukoliko ne bi imala atribut overflow i radius ne bi bio pola od njene strane. Naime, kao da pozadina (Foto je kvadrat iznad pozadine koja zauzima celu širinu ekrana) se nalazi iza fotografije pa višak fotografije treba sakriti da bi bila vidljiva okrugla pozadina, koja je u stvari okvir fotografije.
+      Dakle, ovde se ne bavim fotografijom već njenom pozadinom.
+      */
+
       width: 160px;
       height: 160px;
       margin: 0 auto -80px auto;

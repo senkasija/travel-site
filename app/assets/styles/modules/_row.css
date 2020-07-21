@@ -103,11 +103,15 @@
   &--equal-height-at-medium {
     @mixin atMedium {
       display: flex;
+      /* Vrednošću flex kažemo roditeljskom divu da koristi opciju flex, a kad i  kažemo da koristi flex, onda će se ona visinom poravnati prema najvišem elementu
+      */
     }
 
     & > div {
       float: none;
       display: flex;
+      /*Sva deca prethodnog selektora*/
+      /*sada na float više ne treba*/
     }
   }
   &--equal-height-at-large {
@@ -117,6 +121,8 @@
 
     & > div {
       float: none;
+      /*Sva deca prethodnog selektora*/
+      /*sada na float više ne treba*/
       display: flex;
     }
   }
