@@ -28,6 +28,7 @@
       margin-left: 0;
       margin-bottom: 0;
       display: inline-block;
+      /* vrednošću inline-blok ne dopuštamo zvezdastoj ikoni da pređe u novi red na većimm ekranima */
     }
   }
 
