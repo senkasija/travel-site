@@ -1,12 +1,15 @@
 .site-footer {
     background-color: $mainBlue;
     color: white;
-    padding: .5rem 0;
+    padding: .5rem 0; 
+    /*ovim paddinglom smo ukinuli belinu iznad diva*/
     text-align: center;
+    
     &__text {
-        display: block;
+        display: block; /*prekida inlajn posle teksta */
         margin-bottom: 1rem;
         font-weight: 200;
+        
         @mixin atMedium {
             display: inline;
             margin-bottom: 0;
