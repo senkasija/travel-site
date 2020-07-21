@@ -1,5 +1,6 @@
 .feature-item {
   position: relative;
+  /*kako je dete pozicionirano apsolutno u odnosu na ovog roditelja, roditelj treba da bude pozicioniran relative */
   padding-bottom: 2.5rem;
 
   @mixin atSmall {
@@ -9,10 +10,13 @@
   &__icon {
     display: block;
     margin: 0 auto;
+    /*na ovaj način smo ikonu pozicionirali u svom redu i centrirali horizontalno za prikaz na mobilnom uređaju */
 
     @mixin atSmall {
       position: absolute;
+      /*pozicioniran u odnosu na roditeljski te ide absolute*/
       left: 0;
+      /*0 znači da je na samoj levoj ivici roditeljskog diva*/
     }
   }
 
