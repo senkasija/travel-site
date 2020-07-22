@@ -1,12 +1,16 @@
 .site-header {
   padding: 10px 0;
   position: absolute;
+  /*
+  omogućavamo headeru da bude lak za obrađivanje, ali zauzeće prostora samo koliko ima sadržaja pa ga treba proširit na 100%, a zindeksom ga izvlačimo u prednji plan
+  */
   width: 100%;
   z-index: 2;
-  transition: background-color .3s ease-out;
+  transition: background-color .3s ease-out; /*tranzicija se deffiniše u roditeljskom stilu za childe */
 
   &--is-expanded {
     background-color: rgba($mainBlue, .55);
+    /*da bi ovde primio varijablu instaliramo npm paket postcss-hexrgba --save-dev*/
   }
   
   @mixin atMedium {
@@ -45,7 +49,7 @@
   }
 
   &__logo__graphic {
-    text-indent: -9999px;
+   text-indent: -9999px;
   }
 
   &__menu-icon {
@@ -57,6 +61,7 @@
     right: 10px;
 
     &::before {
+      /*  crta hamburgera */
       content: "";
       position: absolute;
       top: 0;
@@ -77,9 +82,11 @@
       background-color: #FFF;
       transition: all .3s ease-out;
       transform-origin: 0 50%;
+      /*transform-origin definiše početnu tačku linije od koje počinje tranzicija */
     }
 
     &::after {
+      /*donja crta hamburgera */
       content: "";
       position: absolute;
       bottom: 0;
@@ -97,13 +104,16 @@
   }
 
   &__menu-icon--close-x {
+
     &::before {
       transform: rotate(45deg) scaleX(1.25);
+      /*scaleX uvećava element po dužini */
     }
 
     .site-header__menu-icon__middle {
       opacity: 0;
       transform: scaleX(0);
+      /* ovomm transformacijom tranzicija ide od 100 ka 0*/
     }
 
     &::after {
@@ -116,12 +126,15 @@
     transform: scale(1.2);
     transition: all .3s ease-out;
     position: relative;
+    /* Relativnu poziciju stavljamo kako bi brauzer bio svestan vrednosti atributa z-index dakle moraju ići u komplatu*/
     z-index: -10;
+    /*indeksom skrivamo objekat u pozadinu kako ga korisnik ne bi slučajno kliknuo */
     padding-top: 90px;
     text-align: center;
 
     @mixin atMedium {
       opacity: 1;
+      /*Opaciti ovde stoji umesto display: block zbog efekta tranzicije */
       z-index: 1;
       padding-top: 0;
       transform: scale(1);
