@@ -1,6 +1,6 @@
-import throttle from 'lodash/throttle'
+import throttle from 'lodash/throttle';
 /* uvozimo throttle funkcionalnost Lodaša, pri čemu koristimo dva argumenta: funkciju koju hoćemo da pokrenemo i a drugi  je koliko milisekundi želimo da čekamo pre nego što se funkcija pokrene*/
-import debounce from 'lodash/debounce'
+import debounce from 'lodash/debounce';
 /*  
   * Ovu Lodašovu alatku uvozimo za slučaj da se uradi resize prozora
   * The Debounce technique allow us to “group” multiple sequential calls in a single one.
@@ -51,7 +51,7 @@ calculateIfScrolledTo(el) {//izračunava gde se element nalazi
     //The offsetTop property returns the top position (in pixels) relative to the top of the offsetParent element.
     console.log("Element was calculated");
     let scrollPercent = (el.getBoundingClientRect().top / this.browserHeight) * 100;
-    // izračunavammo procenat koji vrh feature-item zauzima u odnosu na visinu prozora
+    // izračunavammo procenat koji vrh ciljanog objekta zauzima u odnosu na visinu prozora
     /**
          * The getBoundingClientRect() method returns the size of an element and its position relative to the viewport.
          * el je feature-item - DAKLE, računamo koliko je gorenji levi ugao feature-item udaljena od gornjeg levog ugla ekrana

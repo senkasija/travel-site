@@ -15,6 +15,7 @@
   
   @mixin atMedium {
     position: fixed;
+    /*Pozicionira header za vrh stranice čak i kad skrolujemo */
     background-color: rgba($mainBlue, .3);
 
     &--dark {
@@ -33,6 +34,7 @@
     top: 0;
     left: 50%;
     transition: transform .3s ease-out;
+    /*ova tranzicija se primenjuje na stil .site-header--dark & */
     transform: translateX(-50%) scale(.8);
     transform-origin: 50% 0;
     background-color: $mainBlue;
@@ -43,6 +45,11 @@
       transform: translateX(0);
 
       .site-header--dark & {
+        /*
+        zanimljivo korišćenje  cssa: Apersend se odnosi na roditeljski css
+        Čita se: Ukoliko se koristi stil site-header--dark, onda  primeni &__logo stil sa donjim atributom: scale .55
+        
+        */
         transform: scale(.55);
       }
     }

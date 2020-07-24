@@ -2,6 +2,7 @@
 import "../styles/styles.css"//uvezijemo App sa fajlom za stilove i on će biti bandlovan
 import MobileMenu from "./modules/MobileMenu";
 import RevealOnScroll from "./modules/RevealOnScroll"; //uvozimo modul koji je zadužen za efekte prilikom skrolovanja
+import StickyHeader from "./modules/StickyHeader"; //uvozimo modul koji je zadužen za sticky header
 
 
 new RevealOnScroll(document.querySelectorAll(".feature-item"), 75); 
@@ -13,6 +14,7 @@ new RevealOnScroll(document.querySelectorAll(".testimonial"), 60);
 
 let mobileMenu = new MobileMenu();
 // Kreiramo novi objekat kome je prototip klasa MobileMenu
+let stickyHeader = new StickyHeader();
 
 if(module.hot){
     module.hot.accept();

@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+  /*Ovim obezbeđujemo lakano skrolovanje kad se klikne na link u meniju*/
+}
 body {
     font-family: 'Roboto', sans-serif;
     color: #333;
