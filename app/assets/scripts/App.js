@@ -1,5 +1,6 @@
 
 import "../styles/styles.css"//uvezijemo App sa fajlom za stilove i on će biti bandlovan
+import "lazysizes";
 import MobileMenu from "./modules/MobileMenu";
 import RevealOnScroll from "./modules/RevealOnScroll"; //uvozimo modul koji je zadužen za efekte prilikom skrolovanja
 import StickyHeader from "./modules/StickyHeader"; //uvozimo modul koji je zadužen za sticky header
