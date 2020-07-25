@@ -1,0 +1,56 @@
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    /*ovim atributom krijem sadržaj tako da je dostupan sadržaj ispod njega*/
+    transform: scale(1.2);
+    transition: all .3s ease-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Ovim atributima sam ovaj objekt raširio na celi ekran */
+    background-color: rgba(255, 255, 255, .95);
+    z-index: 5;
+    display: flex;
+
+    &--is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+
+    &__inner{
+        flex: 1;
+        margin: auto;
+        /* Kombinacija ova dva atributa učinila su sadržaj vertikalno centriranim na stranici 
+            * u roditeljskom stilu mora biti display: flex;
+        */
+    }
+
+    &__description {
+        text-align: center;
+        font-weight: 300;
+        font-size: 1.3rem;
+        line-height: 1.65;
+    }
+
+    &__close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 2rem;
+        color: $mainBlue;
+        transform: scaleX(1.25);
+        /* proširujemo x po širini */
+        transform-origin: 100% 0;
+        /* određujemo mesto odakle počinje razvlačanje */
+        cursor: pointer;
+
+        &:hover {
+            color: $mainOrange;
+        }
+    }
+
+
+}

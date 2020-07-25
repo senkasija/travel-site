@@ -1,0 +1,78 @@
+
+/**
+ * Dobro je što je čitav HTML u posebnom modulu jer korisnik ne mora da ga uvozi osim ako ne želi da klikne na dugme
+ */
+class Modal {
+    constructor(){
+        this.injectHTML();
+        this.modal = document.querySelector(".modal");
+        this.closeIcon = document.querySelector(".modal__close");
+        //this.openModalButtons = document.querySelectorAll(".open-modal"); ovo smo već uradili  u Promisu
+        this.events();
+    }
+
+    events(){
+
+        //Listen for open click
+        //this.openModalButtons.forEach(el => el.addEventListener("click", e => this.openTheModal(e))); ne treba jer smo uradili u Promisu
+        //svako dugme osluškuje za klik kojim će pokrenuti funkciju openTheModal
+
+        //listen for close  click
+        this.closeIcon.addEventListener("click", () => this.closeTheModal());
+
+
+        // pushes any  key
+        document.addEventListener("keyup", e => this.keyPressHandler(e));
+
+    }
+
+    keyPressHandler(e){
+        //samo ako pritisnemo escape key desiće se događaj
+        if(e.keyCode == 27 ){
+            this.closeTheModal();
+        }
+    }
+
+    openTheModal() {
+        //e.preventDefault(); ovo je takođe u promisu i iz parametara takođe brišemo e
+        /**
+         * The preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
+         * onemogućavamo ovim da se ode na očekivani link
+         * donjim kodom otvaramo prozor
+         */
+        this.modal.classList.add("modal--is-visible");
+    }
+
+    closeTheModal(){
+        this.modal.classList.remove("modal--is-visible");
+        //ovim kodom zatvaramo prozor
+    }
+
+    injectHTML(){
+        /**
+         * The insertAdjacentHTML() method inserts a text as HTML, into a specified position.
+         * Prima dva parametra, a drugi smo stavili HTML unutar literala
+         */
+        document.body.insertAdjacentHTML("beforeend", `
+        <div class="modal">
+            <div class="modal__inner">
+            <h2 class="section-title section-title--blue section-title--less-margin"><img src="assets/images/icons/mail.svg" class="section-title__icon"> Get in <strong>Touch</strong></h2>
+            <div class="wrapper wrapper--narrow">
+                <p class="modal__description">We will have an online order system in place soon. Until then, connect with us on any of the platforms below!</p>
+            </div>
+
+            <div class="social-icons">
+                <a href="#" class="social-icons__icon"><img src="assets/images/icons/facebook.svg" alt="Facebook"></a>
+                <a href="#" class="social-icons__icon"><img src="assets/images/icons/twitter.svg" alt="Twitter"></a>
+                <a href="#" class="social-icons__icon"><img src="assets/images/icons/instagram.svg" alt="Instagram"></a>
+                <a href="#" class="social-icons__icon"><img src="assets/images/icons/youtube.svg" alt="YouTube"></a>
+            </div>
+            </div>
+            <div class="modal__close">X</div>
+        </div>
+        `);
+
+    }
+}
+
+export default Modal;
