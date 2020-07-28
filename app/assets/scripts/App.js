@@ -4,6 +4,7 @@ import "lazysizes";
 import MobileMenu from "./modules/MobileMenu";
 import RevealOnScroll from "./modules/RevealOnScroll"; //uvozimo modul koji je zadužen za efekte prilikom skrolovanja
 import StickyHeader from "./modules/StickyHeader"; //uvozimo modul koji je zadužen za sticky header
+import ClientArea from "./modules/ClientArea";
 
 new RevealOnScroll(document.querySelectorAll(".feature-item"), 75); 
 //ovde kreiramo objekat koja će biti korišćen prilikom skrolovanja
@@ -14,7 +15,7 @@ new RevealOnScroll(document.querySelectorAll(".testimonial"), 60);
 new MobileMenu();
 // Kreiramo novi objekat kome je prototip klasa MobileMenu
 new StickyHeader();
-
+new ClientArea();
 /** Kada kreiramo novi objekat u promenljivojj, a kada to ne radimo?
  * Kada znamo da ćemo instanncu koristiti kasnije i želimo da je u varijabli memorišemo, onda koristimo varijablu, kao u slučaju modal
  * Kada želimo da se kod odmah učita, onda nam varijabla  ne traba kao u slučaju objekta StickyHeader i ostala dva objekta
@@ -22,6 +23,8 @@ new StickyHeader();
  */
 
 let modal;//ovo je globalna varijabla koja će da zadrži vrednnost instance classe iz x
+
+
 
 document.querySelectorAll(".open-modal").forEach(el => {
     el.addEventListener("click", e => {
