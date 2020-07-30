@@ -6,6 +6,16 @@ import RevealOnScroll from "./modules/RevealOnScroll"; //uvozimo modul koji je z
 import StickyHeader from "./modules/StickyHeader"; //uvozimo modul koji je zadužen za sticky header
 import ClientArea from "./modules/ClientArea";
 
+// React Related Code Goes Here
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+// Import React components that we created
+import MyAmazingComponent from './modules/MyAmazingComponent';
+
+ReactDOM.render(<MyAmazingComponent />, document.querySelector("#my-react-example"))//metod render aktivira komponentu Reakta: prvi argument ukazuje na komponentu koju ćemo upotrebiti, a druga na mesto gde ćemo je upotrebiti.
+
+
 new RevealOnScroll(document.querySelectorAll(".feature-item"), 75); 
 //ovde kreiramo objekat koja će biti korišćen prilikom skrolovanja
 // u slučaju ovakvog kreiranja objekta, unećemo parametre u konstruktor els for elements tako da će querySelectorAll biti parametar

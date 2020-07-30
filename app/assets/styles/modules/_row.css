@@ -103,7 +103,7 @@
   &--equal-height-at-medium {
     @mixin atMedium {
       display: flex;
-      /* Vrednošću flex kažemo roditeljskom divu da koristi opciju flex, a kad i  kažemo da koristi flex, onda će se ona visinom poravnati prema najvišem elementu
+      /* Vrednošću flex kažemo roditeljskom divu da koristi opciju flex, a kad i kažemo da koristi flex, onda će se ona visinom poravnati prema najvišem elementu
       */
     }
 
