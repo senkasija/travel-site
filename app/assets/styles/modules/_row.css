@@ -111,7 +111,7 @@
       float: none;
       display: flex;
       /*Sva deca prethodnog selektora*/
-      /*sada na float više ne treba*/
+      /*sada nam float više ne treba*/
     }
   }
   &--equal-height-at-large {

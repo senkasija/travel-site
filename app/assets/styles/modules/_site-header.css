@@ -2,7 +2,7 @@
   padding: 10px 0;
   position: absolute;
   /*
-  omogućavamo headeru da bude lak za obrađivanje, ali zauzeće prostora samo koliko ima sadržaja pa ga treba proširit na 100%, a zindeksom ga izvlačimo u prednji plan
+  omogućavamo headeru da bude lak za obrađivanje, ali zauzeće prostora samo koliko ima sadržaja pa ga treba proširitI na 100%, a zindeksom ga izvlačimo u prednji plan
   */
   width: 100%;
   z-index: 2;

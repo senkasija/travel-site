@@ -1,7 +1,7 @@
-const currentTask = process.env.npm_lifecycle_event;
+const currentTask = process.env.npm_lifecycle_event;// ovaj kod je za bildovanje javne verzije sajta
 const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');//čišćenje starih bandlovanih fajlova za objavljivanje
-const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //  izdvajanje css iz bundled.js
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fse = require('fs-extra');
 
@@ -27,7 +27,7 @@ let cssConfig = {
   use: ['css-loader?url=false', {loader: 'postcss-loader', options: {plugins: postCSSPlugins}}]
 }
 /**
- * Donji kod je za kreiranje html fajlova kad ih ima više
+ * Donji kod je za tretiranje html fajlova kad ih ima više
  */ 
 pages = fse.readdirSync('./app').filter(function(file) {
   return file.endsWith('.html');
@@ -38,8 +38,8 @@ pages = fse.readdirSync('./app').filter(function(file) {
   })
 });
 
-let config = { // ovde ide ono što je zajedničko obema opcijama
-  entry: './app/assets/scripts/App.js', // ovo je entry point
+let config = {
+  entry: './app/assets/scripts/App.js',
   plugins: pages,
   module: {
     rules: [
@@ -62,7 +62,7 @@ if(currentTask == "dev"){
   cssConfig.use.unshift('style-loader');
   config.output = {
     filename: 'bundled.js',
-    path: path.resolve(__dirname, 'app') // u ovoj opciji banndlovanje ide u folder app
+    path: path.resolve(__dirname, 'app')
   },
   config.devServer = {
     before: function(app, server){
@@ -70,7 +70,7 @@ if(currentTask == "dev"){
     },
     contentBase: path.join(__dirname, 'app'), //ovde ukazujemo gde se  nalazi indexni fajl koji će prozivati
     hot: true, //ovo je property koji kaže da se css/jss sadržaj pojavi u memoriji browsera bez refreša
-    port: 4000,
+    port: 3000,
     host: '0.0.0.0' //Ovo omogućava da svaki uređaj može da prati promene, ako je na istoj mreži, da bismo videli koja je ipv4 adresa ukucamo u CL ipconfig i na tu adresu dodamo 3000: 192.168.1.5:3000
   },
   config.mode = "development";
@@ -80,10 +80,10 @@ if(currentTask == "build"){
   
   cssConfig.use.unshift(MiniCssExtractPlugin.loader);
   postCSSPlugins.push(require('cssnano'));
-  config.output = { // ovaj objekat izdvaja iz fajla bundled.js na .js i  .css fajl
-    filename: '[name].[chunkhash].js', // ovde određujemo ime koje će se svaku put menjati kada se promeni verzija
-    chunkFilename: '[name].[chunkhash].js', // chunkhash daje string brojeva
-    path: path.resolve(__dirname, 'docs') // u ovoj opciji banndlovanje ide u folder dist
+  config.output = {
+    filename: '[name].[chunkhash].js',
+    chunkFilename: '[name].[chunkhash].js',
+    path: path.resolve(__dirname, 'docs')
   },
   config.mode = "production";
   config.optimization = {
@@ -95,7 +95,8 @@ if(currentTask == "build"){
     new RunAfterCompile()  
   )}
 
-//module.exports = { // ovaj kod odgovara naredbi dev = webpack-dev-server
+//module.exports menjam u let deletMeLater// 
+//let deletMeLater = {
   //entry: './app/assets/scripts/App.js',
   /*output: {
     filename: 'bundled.js',
@@ -119,7 +120,7 @@ if(currentTask == "build"){
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader?url=false', {loader: 'postcss-loader', options: {plugins: postCSSPlugins}}] // primenjuje plaginove na sve fajlove koji se završavaju ekstennzijomm .css
+        use: ['style-loader', 'css-loader?url=false', {loader: 'postcss-loader', options: {plugins: postCSSPlugins}}]
         /**
          * By default, the css-loader will attempt to handle any images we reference in our CSS (e.g. background images, etc...). While this is great in certain situations, for our usage in this course we want to disable this and we'll manage our image files manually. With this in mind, when you list 'css-loader' in your webpack.config.js file you'll want to add an option to the end of it like this 'css-loader?url=false' instead.
          //
@@ -128,4 +129,4 @@ if(currentTask == "build"){
   }*/
 
 
-module.exports = config; // objakat koji hoćemo da izvezemo iz ovog fajla 
+module.exports = config;
